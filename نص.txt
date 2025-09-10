@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>طلبات مسبقة - المطعم</title>
+    <link rel="stylesheet" href="styles.css" />
+    <meta name="theme-color" content="#C62828" />
+  </head>
+  <body>
+    <header class="topbar">
+      <div class="brand">
+        <span class="logo">🍔</span>
+        <h1>مطعم الشاورما</h1>
+      </div>
+      <a href="#order" class="cta">اطلب الآن</a>
+    </header>
+
+    <main>
+      <section class="hero">
+        <h2>اطلب تجهيز الأكل قبل الوصول</h2>
+        <p>شاورما وبيبسي فقط — استلام سريع من الفرع</p>
+        <a href="#order" class="btn-primary">ابدأ الطلب</a>
+      </section>
+
+      <section id="menu" class="menu">
+        <h3>القائمة</h3>
+        <div class="items">
+          <article class="card" data-id="shawarma">
+            <div class="card-media" aria-hidden="true">🌯</div>
+            <div class="card-body">
+              <h4>شاورما</h4>
+              <p class="price"><span id="price-shawarma"></span> ر.س</p>
+              <div class="qty">
+                <button class="minus" aria-label="إنقاص">−</button>
+                <input class="count" type="number" min="0" value="0" inputmode="numeric" />
+                <button class="plus" aria-label="زيادة">+</button>
+              </div>
+            </div>
+          </article>
+
+          <article class="card" data-id="pepsi">
+            <div class="card-media" aria-hidden="true">🥤</div>
+            <div class="card-body">
+              <h4>بيبسي</h4>
+              <p class="price"><span id="price-pepsi"></span> ر.س</p>
+              <div class="qty">
+                <button class="minus" aria-label="إنقاص">−</button>
+                <input class="count" type="number" min="0" value="0" inputmode="numeric" />
+                <button class="plus" aria-label="زيادة">+</button>
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section id="order" class="order">
+        <h3>بيانات الطلب</h3>
+        <form id="orderForm" novalidate>
+          <div class="summary">
+            <div>الإجمالي: <strong><span id="total">0.00</span> ر.س</strong></div>
+            <div class="eta">وقت التحضير التقريبي: <strong id="prepTime">10</strong> دقائق</div>
+          </div>
+
+          <div class="grid">
+            <label>الاسم
+              <input type="text" name="name" required placeholder="الاسم الثلاثي" />
+            </label>
+            <label>الجوال
+              <input type="tel" name="phone" required placeholder="05xxxxxxxx" pattern="^05\\d{8}$" />
+            </label>
+            <label>وقت الاستلام
+              <input type="time" name="pickup" required />
+            </label>
+            <label class="full">ملاحظات
+              <textarea name="notes" rows="2" placeholder="بدون مايونيز، زيادة ثوم..."></textarea>
+            </label>
+          </div>
+
+          <input type="hidden" name="items" id="itemsField" />
+          <button type="submit" class="btn-primary big" disabled id="submitBtn">تأكيد الطلب</button>
+          <p class="hint">الدفع عند الاستلام • استلام من الفرع</p>
+        </form>
+
+        <div id="success" class="success hidden" role="status" aria-live="polite">
+          <h4>تم استلام طلبك ✅</h4>
+          <p>رقم الطلب: <strong id="orderId"></strong></p>
+          <p>ستصلك رسالة تأكيد على الجوال.</p>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <small>© مطعم الشاورما — جميع الحقوق محفوظة</small>
+    </footer>
+
+    <script src="app.js"></script>
+  </body>
+</html>

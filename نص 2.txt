@@ -1,0 +1,46 @@
+:root{
+  --red:#C62828;
+  --red-dark:#B71C1C;
+  --white:#ffffff;
+  --ink:#222;
+  --muted:#f6f6f7;
+  --border:#eee;
+  --radius:14px;
+  --shadow:0 6px 20px rgba(0,0,0,.08);
+}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;color:var(--ink);background:var(--white)}
+.topbar{position:sticky;top:0;background:var(--white);border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;padding:10px 16px;z-index:10}
+.brand{display:flex;gap:10px;align-items:center}
+.brand h1{font-size:18px;margin:0}
+.logo{font-size:22px}
+.cta{background:var(--red);color:#fff;padding:8px 14px;border-radius:999px;text-decoration:none;font-weight:600}
+.hero{padding:28px 16px;text-align:center;background:linear-gradient(0deg, var(--white), #fff5f5)}
+.hero h2{margin:0 0 6px}
+.btn-primary{display:inline-block;background:var(--red);color:#fff;text-decoration:none;padding:12px 18px;border-radius:12px;box-shadow:var(--shadow);font-weight:700}
+.btn-primary.big{width:100%;padding:14px 20px;font-size:18px}
+.btn-primary:disabled{opacity:.5}
+.menu{padding:16px}
+.menu h3,.order h3{margin:8px 0 12px}
+.items{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.card{background:var(--white);border:1px solid var(--border);border-radius:var(--radius);box-shadow:var(--shadow);padding:12px;display:flex;gap:12px;align-items:center}
+.card-media{font-size:36px}
+.card-body h4{margin:0 0 6px}
+.price{margin:0 0 10px;color:#444}
+.qty{display:flex;align-items:center;gap:8px}
+.qty .count{width:64px;text-align:center;padding:8px;border:1px solid var(--border);border-radius:10px}
+.qty button{width:36px;height:36px;border:none;border-radius:10px;background:var(--muted);font-size:18px;font-weight:700;cursor:pointer}
+.qty button:active{transform:scale(.98)}
+.order{padding:16px;background:var(--muted);border-top:1px solid var(--border)}
+.summary{display:flex;align-items:center;justify-content:space-between;background:#fff;border:1px solid var(--border);border-radius:12px;padding:12px;margin-bottom:12px}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.grid .full{grid-column:1 / -1}
+input,textarea{width:100%;padding:12px;border:1px solid var(--border);border-radius:12px}
+.footer{padding:18px;text-align:center;color:#666}
+.success{background:#e8f5e9;border:1px solid #c8e6c9;border-radius:12px;padding:16px;margin-top:14px}
+.hidden{display:none}
+
+@media(min-width:768px){
+  .items{grid-template-columns:repeat(3,1fr)}
+  .hero{padding:40px 24px}
+}
